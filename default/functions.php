@@ -12,6 +12,22 @@ function bauhaus_enqueue_scripts() {
 	);
 }
 
+function enqueue_our_required_stylesheets(){
+	wp_enqueue_style(
+		'font-awesome',
+		'//www.zuobin.net/wp-content/plugins/wptouch/themes/bauhaus/default/font-awesome/css/font-awesome.min.css');
+}
+add_action('foundation_enqueue_scripts','enqueue_our_required_stylesheets');
+
+//Add alimama
+function enqueue_our_required_ali(){
+	wp_enqueue_style(
+		'alimama',
+		'//www.zuobin.net/wp-content/plugins/wptouch/themes/bauhaus/default/font-awesome/ali/iconfont.css');
+}
+add_action('foundation_enqueue_scripts','enqueue_our_required_ali');
+
+
 function bauhaus_should_show_thumbnail() {
 	$settings = bauhaus_get_settings();
 
