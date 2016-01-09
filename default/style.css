@@ -1092,6 +1092,40 @@ form#commentform input {
 	font-size: 70%;
 }
 
+.loop-link .comments{
+	font-size: 14px;
+	color: #d92a25;
+	vertical-align: bottom;
+	padding: 0px 2px;
+	margin: 0px 0px 0px 0px;
+	border-radius: 2px;
+	line-height: 23px;
+}
+
+.is_copy{
+	font-size: 14px;
+	border: 1px solid #606164;
+	color: #ffffff;
+	vertical-align: bottom;
+	padding: 0px 2px;
+	margin: 0px 0px 0px 0px;
+	border-radius: 2px;
+	line-height: 23px;
+	background-color: #606164;
+}
+
+.is_mine{
+	font-size: 14px;
+	border: 1px solid #2ad97f;
+	color: #ffffff;
+	vertical-align: bottom;
+	padding: 0px 2px;
+	margin: 0px 0px 0px 0px;
+	border-radius: 2px;
+	line-height: 23px;
+	background-color: #2ad97f;
+}
+
 
 
 /* @end */

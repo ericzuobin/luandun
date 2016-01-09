@@ -24,7 +24,18 @@
 		 </span>
 	 <?php } ?>
 
-	<h2 class="post-title heading-font"><?php the_title(); ?></h2>
+	<h2 class="post-title heading-font">
+		<?php
+		$custom = get_post_custom(get_the_ID());
+		$custom_value = $custom['is_copy'];
+		if($custom_value[0]){
+
+			echo "<span class='is_copy'>转</span>";
+		}else{
+			echo "<span class='is_mine'>原</span>";
+		}
+		?>
+		<?php the_title(); ?></h2>
 
 	<?php if ( wptouch_should_load_rtl() ) { ?>
 		<i class="arrow wptouch-icon-angle-left"></i>

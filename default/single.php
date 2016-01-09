@@ -16,7 +16,18 @@
 							<?php if ( comments_open() || wptouch_have_comments() ) comments_number( __( 'no comments', 'wptouch-pro' ), __( '1 comment', 'wptouch-pro' ), __( '% comments', 'wptouch-pro' ) ); ?>
 						<?php } ?>
 					</span>
-					<h2 class="post-title heading-font"><?php wptouch_the_title(); ?></h2>
+					<h2 class="post-title heading-font">
+						<?php
+						$custom = get_post_custom(get_the_ID());
+						$custom_value = $custom['is_copy'];
+						if($custom_value[0]){
+
+							echo "<span class='is_page_copy'>转</span>";
+						}else{
+							echo "<span class='is_page_mine'>原</span>";
+						}
+						?>
+						<?php wptouch_the_title(); ?></h2>
 					<?php if ( bauhaus_should_show_author() ) { ?>
 						<span class="post-author"><?php the_author(); ?></span>
 					<?php } ?>
