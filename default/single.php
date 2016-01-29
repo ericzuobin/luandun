@@ -39,7 +39,9 @@
 							<?php the_post_thumbnail('large', array( 'class' => 'post-thumbnail wp-post-image' ) ); ?>
 						</div>
 					<?php } ?>
-					<?php wptouch_the_content(); ?>
+					<?php /*重定向以前使用*/ ?>
+					<?php /*wptouch_the_content();*/ ?>
+					<?php get_wptouch_the_content(); ?>
 					<?php if ( bauhaus_should_show_taxonomy() ) { ?>
 						<?php if ( wptouch_has_categories() || wptouch_has_tags() ) { ?>
 							<div class="cat-tags">

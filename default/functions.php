@@ -27,6 +27,16 @@ function bauhaus_enqueue_scripts() {
 	);
 }
 
+//自己添加的,获取Content的方法
+function get_wptouch_the_content() {
+
+	$my_wp_content = apply_filters( 'the_content', wptouch_get_content() );
+	$my_wp_content = str_replace(home_url('/wp-content').'/uploads',sahinn_blog_m_source_f().'/uploads', $my_wp_content);
+	$my_wp_content = str_replace('http://115.28.159.142/wp-content/uploads',sahinn_blog_m_source_f().'/uploads', $my_wp_content);
+
+	echo $my_wp_content;
+}
+
 //修改来适应移动端,配合CDN
 function enqueue_our_required_stylesheets(){
 	wp_enqueue_style(

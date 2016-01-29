@@ -8,6 +8,7 @@
 				<?php the_post_thumbnail('large', array( 'class' => 'post-thumbnail wp-post-image' ) ); ?>
 			</div>
 		<?php } ?>
-		<?php wptouch_the_content() ; ?>
+		<?php /*重定向*//*wptouch_the_content();*/ ?>
+		<?php get_wptouch_the_content(); ?>
 	</div>
 </div>
