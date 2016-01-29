@@ -1,5 +1,20 @@
 <?php
 
+//存放CDN静态文件的目录
+function sahinn_blog_m_source(){
+	//非CDN配置
+	//echo "http://img.zuobin.net";
+	//CDN配置
+	echo "http://source.zuobin.net";
+}
+
+function sahinn_blog_m_source_f(){
+	//非CDN配置
+	//return "http://img.zuobin.net";
+	//CDN配置
+	return "http://source.zuobin.net";
+}
+
 add_action( 'foundation_enqueue_scripts', 'bauhaus_enqueue_scripts' );
 
 function bauhaus_enqueue_scripts() {
@@ -12,10 +27,11 @@ function bauhaus_enqueue_scripts() {
 	);
 }
 
+//修改来适应移动端,配合CDN
 function enqueue_our_required_stylesheets(){
 	wp_enqueue_style(
 		'font-awesome',
-		'//www.zuobin.net/wp-content/plugins/wptouch/themes/bauhaus/default/font-awesome/css/font-awesome.min.css');
+		sahinn_blog_m_source_f().'/m/font-awesome/css/font-awesome.min.css');
 }
 add_action('foundation_enqueue_scripts','enqueue_our_required_stylesheets');
 
@@ -23,7 +39,7 @@ add_action('foundation_enqueue_scripts','enqueue_our_required_stylesheets');
 function enqueue_our_required_ali(){
 	wp_enqueue_style(
 		'alimama',
-		'//www.zuobin.net/wp-content/plugins/wptouch/themes/bauhaus/default/font-awesome/ali/iconfont.css');
+		sahinn_blog_m_source_f().'/m/font-awesome/ali/iconfont.css');
 }
 add_action('foundation_enqueue_scripts','enqueue_our_required_ali');
 
