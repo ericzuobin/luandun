@@ -15,6 +15,7 @@
 							<?php if ( bauhaus_should_show_date() && ( comments_open() || wptouch_have_comments() ) ) echo '&harr;'; ?>
 							<?php if ( comments_open() || wptouch_have_comments() ) comments_number( __( 'no comments', 'wptouch-pro' ), __( '1 comment', 'wptouch-pro' ), __( '% comments', 'wptouch-pro' ) ); ?>
 						<?php } ?>
+						<?php single_views(get_the_ID()); ?>
 					</span>
 					<h2 class="post-title heading-font">
 						<?php

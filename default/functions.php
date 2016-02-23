@@ -123,3 +123,39 @@ function bauhaus_should_show_comment_bubbles(){
 		return false;
 	}
 }
+
+/* Postviews start */
+function getPostViews($postID){
+	$count_key = 'views';
+	$count = get_post_meta($postID, $count_key, true);
+	/*if($count==''){
+		delete_post_meta($postID, $count_key);
+		add_post_meta($postID, $count_key, '0');
+		return " 0 ";
+	}*/
+	return $count;
+}
+function setPostViews($postID) {
+	$count_key = 'views';
+	$count = get_post_meta($postID, $count_key, true);
+	if($count==''){
+		$count = 0;
+		delete_post_meta($postID, $count_key);
+		add_post_meta($postID, $count_key, '0');
+	}else{
+		$count++;
+		update_post_meta($postID, $count_key, $count);
+	}
+	return $count;
+}
+
+function post_loop_views($postID){
+	$count = getPostViews($postID);
+	echo "&nbsp;&bull;&nbsp;".$count."浏览";
+}
+
+function single_views($postID){
+	$count = setPostViews($postID);
+	echo '&harr;'.$count.'次浏览';
+}
+/* Postviews start end*/

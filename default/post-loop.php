@@ -19,7 +19,7 @@
 		<span class="post-date-author body-font">
 			<?php if ( bauhaus_should_show_date() ) { wptouch_the_time(); } ?>
 		 	<?php if ( bauhaus_should_show_author() ) { ?>
-		 		<?php if ( bauhaus_should_show_date() ) echo '&bull;'; ?> <?php _e( 'by', 'wptouch-pro' ); ?> <?php the_author(); ?>
+		 		<?php if ( bauhaus_should_show_date() ) echo '&bull;'; ?> <?php _e( 'by', 'wptouch-pro' ); ?> <?php the_author(); ?><?php post_loop_views(get_the_ID());?>
 		 	<?php } ?>
 		 </span>
 	 <?php } ?>
